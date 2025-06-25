@@ -1,0 +1,11 @@
+{
+	"name": "xades-epes-nodejs",
+	"version": "1.0.0",
+	"type": "module",
+	"scripts": {
+		"start": "node src/index.js"
+	},
+	"dependencies": {
+		"xmlbuilder2": "3.1.1"
+	}
+}

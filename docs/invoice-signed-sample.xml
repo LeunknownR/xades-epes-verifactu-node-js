@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Invoice>
+  <Number>INV-123</Number>
+  <Date>2025-06-24</Date>
+  <Amount>1000.00</Amount>
+  <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#" Id="xmldsig-383325cd-c5dc-48a7-bb32-b3872c01f277">
+    <ds:SignedInfo>
+      <ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+      <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+      <!-- Referencia al XML original canonicalizado (sin firmar) -->
+      <ds:Reference URI="" Id="xmldsig-383325cd-c5dc-48a7-bb32-b3872c01f277-ref">
+        <ds:Transforms>
+          <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+        </ds:Transforms>
+        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+        <ds:DigestValue>nEwsk0JbE9ybacUHF1I58a2/M4Qw3DDzqCXebaXzDg2aAPbfYyACBRepqYx7pfZKhLabHm6WtsMZfrNWAaaRNs/HYa38dCJ9t6DBAjJ0DYcv6lLZh7ClNvbXbIZd/XfLPIwXkVRRW+sHVWXxkHjyFp3GVbX5fDfLqC4W5n+1R/kzt75QkLqIIp+E6uFt+n3eyeqZzcV14NqrjKvwNcosYkTrvt1WSqmlSJlBWANgbiFCHivMq90JeyNxF9B2/CmeQM2JRp/V6PENHbGm+cnC3i/yMWag78ksOI52NtJSLNDlsV4ZGPp6NXFgIFaCaFWepcY9cyuQXM8VKYK86A+sAg==</ds:DigestValue>
+      </ds:Reference>
+      <!-- Referencia al nodo SignedProperties firmado -->
+      <ds:Reference Type="http://uri.etsi.org/01903#SignedProperties" URI="#xmldsig-cd137bee-ae4d-4c1b-bbdf-4a5291c0b38f-signedprops">
+        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+        <ds:DigestValue>N88UOPJcBO5KsqoZWKiXW/UXKI3f+78PGpTWok0iJ9wr7SrNPqJhfEZA7D50blj+VbO4XJ/k1NDaTW9+2uEa6aGF0ueBzDa4koykNC/fXVWM22k6R9LEWUj8DfH27sgIj8l/oF1jgNe6MVY06NAtgla0t8GK5jy42diiopK+x49Pe7OGvW+wwfYrr15+Y4lGuZiZtdQpFUkEVWw1ChEQLWAOJJO0ThqGMx0NtATCKLqE7bXzRfBjaTB91ZP6fUPMMxhRcySYtY6gcY1VAYUHKmSrOh0FFrH7U2W0TEmrMwhXc84zIpkvZFuvbVoqCtHZS3drVrnl9MhtfjeUi8w/Tg==</ds:DigestValue>
+      </ds:Reference>
+    </ds:SignedInfo>
+    <!-- Cifrado de SignedInfo + private key del certificado -->
+    <ds:SignatureValue Id="xmldsig-383325cd-c5dc-48a7-bb32-b3872c01f277-sigvalue">XWlVm7at1QDEkJyeA8u+YOZtUQfXPGUzC3ITc8ItUJwS08WQ+yTTFGnO9GvLqo5J854AkmytU0uGPcrJV0lUoqobongFhTklKGh9SAGBZAnH+dF3jHkHqizrf4N6eG37aykjT+s7mmkxDsBn307chDgK3c6Gx5rf3U8b0MQfJoMbOGdOYj+No5pT5HmyO7F0vQJf2dUk4HKTQ5hLaAZIgG71Wy3oiAdDT5AJPAwsF40dZ1RD8UyZr32/9xo4A0VFtkJq3cIAJy3FKDFwpzIKNloMSVnpYHZ+5APHnNlvx2pcq0hYnAvfjXzpPYAZokB1L8l3rcH0tuDQJJVIgtYMyQ==</ds:SignatureValue>
+    <!-- Certificado -->
+    <ds:KeyInfo>
+      <ds:X509Data>
+        <ds:X509Certificate>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</ds:X509Certificate>
+      </ds:X509Data>
+      <ds:KeyValue>
+        <ds:RSAKeyValue>
+          <ds:Modulus>rULLxQ9LE8ahkgvWuMaDQBGzKDSk7BXjprO0uBov5WBgLL77+vS0yoz1oronK2HtxiSThsqPAIfGXZnKodFgIhD23a/hOJPuqBZ1wKvgWOiz0VVOu06wHo+dM6QUCYR8rO8j9GnxIE9J9Uy0XZvwMmXpgmdvqZTNnp4OH3INuSONUiwiVg8AnlEeKzDA7JvSVN7zYIzCwbbeRGC3rNeddpHdH48byxP+RU5kP6kcdn8yFK+XIbqxgKjxCbRIS1v/M3ByNRHu1lMsXN0kx310vAkqahW8D7bkpUdqZ6uji3ij5ZKIfCZGgBKoY7685vBAcVoa6Bf8LAz0gztYOipRqwIDAQAB</ds:Modulus>
+          <ds:Exponent>AQAB</ds:Exponent>
+        </ds:RSAKeyValue>
+      </ds:KeyValue>
+    </ds:KeyInfo>
+    <ds:Object>
+      <xades:QualifyingProperties xmlns:xades="http://uri.etsi.org/01903/v1.3.2#" Target="#xmldsig-383325cd-c5dc-48a7-bb32-b3872c01f277">
+        <xades:SignedProperties Id="xmldsig-383325cd-c5dc-48a7-bb32-b3872c01f277-signedprops">
+          <xades:SignedSignatureProperties>
+            <xades:SigningTime>2025-06-25T19:13:27+02:00</xades:SigningTime>
+            <xades:SigningCertificate>
+              <xades:Cert>
+                <xades:CertDigest>
+                  <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                  <!-- Certificado -->
+                  <ds:DigestValue>vKKf4GNFmHfYMbWBXdmQO60q7z872FXNsRpSS0ulpA0=</ds:DigestValue>
+                </xades:CertDigest>
+                <xades:IssuerSerial>
+                  <ds:X509IssuerName>C = ES, O = FNMT-RCM, OU = CERES, CN = AC Representaci\C3\B3n</ds:X509IssuerName>
+                  <ds:X509SerialNumber>27726303611531931671975467473938073613</ds:X509SerialNumber>
+                </xades:IssuerSerial>
+              </xades:Cert>
+            </xades:SigningCertificate>
+            <!-- Metada sobre la política de firma -->
+            <xades:SignaturePolicyIdentifier>
+              <xades:SignaturePolicyId>
+                <xades:SigPolicyId>
+                  <xades:Identifier>urn:oid:2.16.724.1.3.1.1.2.1.9</xades:Identifier>
+                </xades:SigPolicyId>
+                <xades:SigPolicyHash>
+                  <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                  <ds:DigestValue>Dkx2R3nMv8kWo7iSAh+/1SQ70hfseOEaQbpJnURk+pg=</ds:DigestValue>
+                </xades:SigPolicyHash>
+                <xades:SigPolicyQualifiers>
+                  <xades:SigPolicyQualifier>
+                    <xades:SPURI>https://sede.administracion.gob.es/politica_de_firma_anexo_1.pdf</xades:SPURI>
+                  </xades:SigPolicyQualifier>
+                </xades:SigPolicyQualifiers>
+              </xades:SignaturePolicyId>
+            </xades:SignaturePolicyIdentifier>
+          </xades:SignedSignatureProperties>
+        </xades:SignedProperties>
+      </xades:QualifyingProperties>
+    </ds:Object>
+  </ds:Signature>
+</Invoice>

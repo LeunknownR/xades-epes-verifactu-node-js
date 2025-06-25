@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Invoice>
+	<Number>INV-123</Number>
+	<Date>2025-06-24</Date>
+	<Amount>1000.00</Amount>
+</Invoice>
