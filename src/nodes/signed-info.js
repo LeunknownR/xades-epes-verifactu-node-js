@@ -4,13 +4,13 @@ import fs from "fs";
 import { canonicalizeXml } from "../canonicalize.js";
 import { CANONICALIZATION_METHOD_STANDARD_URL, SHA_256_STANDARD_URL, XADES_STANDARD_URL, XML_SIGNATURE_STANDARD_ENVELOPED_SIGNATURE_URL, XML_SIGNATURE_STANDARD_URL } from "../constants.js";
 
-export function buildXmlDigest(companyCertificate) {
-	const canonicalizedXml = canonicalizeXml("invoice.xml");
-	const signer = crypto.createSign('sha256');
-	signer.update(canonicalizedXml);
-	signer.end();
-	const digest = signer.sign(companyCertificate.privateKey, "base64");
-	return digest;
+export function buildXmlDigest() {
+	const xml = fs.readFileSync("invoice.xml", "utf8");
+	const xmlObject = xmlbuilder2.convert(xml, { format: 'object' });
+	fs.writeFileSync("tmp-invoice.xml", xmlbuilder2.create(xmlObject).end({ prettyPrint: false }));
+	const canonicalizedXml = canonicalizeXml("tmp-invoice.xml");
+	fs.unlinkSync("tmp-invoice.xml");
+	return crypto.createHash('sha256').update(canonicalizedXml).digest("base64");
 }
 export function buildSignedPropertiesDigest({ signedPropertiesObj, companyCertificate }) {
 	const signedPropertiesXML = xmlbuilder2.create({

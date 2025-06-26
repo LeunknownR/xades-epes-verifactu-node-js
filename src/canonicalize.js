@@ -1,9 +1,9 @@
 import child_process from "child_process";
 
-export function canonicalizeXml(xmlFile) {
+export function canonicalizeXml(xmlFileName) {
 	return child_process
-		.execSync(`xmllint ${xmlFile} --c14n`)
+		.execSync(`xmllint ${xmlFileName} --c14n`)
 		.toString()
-		.replace(/\n/g, "")
-		.replace(/\s+/g, "");
+		.replace(/>\s+</g, "><")
+		.replace(/\n/g, "");
 }
