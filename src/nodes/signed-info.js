@@ -5,6 +5,7 @@ import { canonicalizeXml } from "../canonicalize.js";
 import {
 	CANONICALIZATION_METHOD_STANDARD_URL,
 	SHA_256_STANDARD_URL,
+	SHA_256_STANDARD_XML_SIG_URL,
 	XADES_STANDARD_URL,
 	XML_SIGNATURE_STANDARD_ENVELOPED_SIGNATURE_URL,
 	XML_SIGNATURE_STANDARD_URL,
@@ -57,8 +58,7 @@ export function buildSignedInfoNode({
 				"@Algorithm": CANONICALIZATION_METHOD_STANDARD_URL,
 			},
 			"ds:SignatureMethod": {
-				"@Algorithm":
-					"http://www.w3.org/2001/04/xmldsig-more#rsa-sha256",
+				"@Algorithm": SHA_256_STANDARD_XML_SIG_URL,
 			},
 			"ds:Reference": [
 				{
@@ -77,7 +77,7 @@ export function buildSignedInfoNode({
 				},
 				{
 					"@Type": "http://uri.etsi.org/01903#SignedProperties",
-					"@URI": "#xmldsig-cd137bee-ae4d-4c1b-bbdf-4a5291c0b38f-signedprops",
+					"@URI": `#xmldsig-${signatureId}-signedprops`,
 					"ds:DigestMethod": {
 						"@Algorithm": SHA_256_STANDARD_URL,
 					},

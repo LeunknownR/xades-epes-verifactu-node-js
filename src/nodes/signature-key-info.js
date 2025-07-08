@@ -1,8 +1,9 @@
 import crypto from "crypto";
+import { getContentFromCertificateKey } from "../company-certificate.js";
 
 function buildRsaKeyValueNode(companyCertificate) {
-	const publicKey = crypto.createPublicKey(companyCertificate.publicKey);
-	const keyDetails = publicKey.export({
+	const certificateKey = crypto.createPublicKey(companyCertificate.certificateKey);
+	const keyDetails = certificateKey.export({
 		type: 'pkcs1',
 		format: 'der'
 	});
@@ -22,10 +23,9 @@ export function buildSignatureKeyInfoNode(companyCertificate) {
 	return {
 		"ds:KeyInfo": {
 			"ds:X509Data": {
-				"ds:X509Certificate": companyCertificate.publicKey
-					.split("-----BEGIN CERTIFICATE-----")[1]
-					.split("-----END CERTIFICATE-----")[0]
-					.replace(/\s+/g, ""),
+				"ds:X509Certificate": getContentFromCertificateKey(
+					companyCertificate.certificateKey
+				),
 			},
 			"ds:KeyValue": {
 				...buildRsaKeyValueNode(companyCertificate),

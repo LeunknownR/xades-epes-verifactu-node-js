@@ -4,7 +4,7 @@ Implementación de Xades EPES con Node JS.
 
 ## Consideración
 
-Colocar los ficheros del certificado `certs/private_key.key` y `certs/public_cert.crt`.
+Colocar los ficheros del certificado `certs/private_key.key` y `certs/certificate_key.crt`.
 
 ## Ejecución
 
